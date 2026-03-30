@@ -11,7 +11,9 @@
     "lint": "echo 'no lint configured'"
   },
   "dependencies": {
-    "hono": "^4.7.0"
+    "@orpc/server": "^1.13.13",
+    "hono": "^4.7.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250313.0",
