@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "game-framework-server",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-03-30",
+  "minify": true
+}

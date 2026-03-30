@@ -33,6 +33,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Wrangler
+.wrangler
+
+# Claude
+.claude
+
 # Misc
 .DS_Store
 *.pem
