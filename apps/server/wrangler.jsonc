@@ -7,6 +7,6 @@
   // For production, set DATABASE_URL via: wrangler secret put DATABASE_URL
   // For local dev, add DATABASE_URL to .dev.vars file (gitignored)
   "vars": {
-    "DATABASE_URL": ""
+    "DATABASE_URL": "postgresql://neondb_owner:npg_PdpBs0bMZa8U@ep-hidden-surf-ansc6icd-pooler.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
   }
 }
