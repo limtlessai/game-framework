@@ -2,8 +2,13 @@ import { Hono } from 'hono'
 import { RPCHandler } from '@orpc/server/fetch'
 import { onError } from '@orpc/server'
 import { router } from './router.js'
+import { createDb } from './db/index.js'
 
-const app = new Hono()
+export type Bindings = {
+  DATABASE_URL: string
+}
+
+const app = new Hono<{ Bindings: Bindings }>()
 
 const rpcHandler = new RPCHandler(router, {
   interceptors: [
@@ -15,10 +20,13 @@ const rpcHandler = new RPCHandler(router, {
 
 // Mount oRPC under /rpc/*
 app.use('/rpc/*', async (c, next) => {
+  const db = createDb(c.env.DATABASE_URL)
+
   const { matched, response } = await rpcHandler.handle(c.req.raw, {
     prefix: '/rpc',
     context: {
       headers: c.req.raw.headers,
+      db,
     },
   })
 
