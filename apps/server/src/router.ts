@@ -1,9 +1,11 @@
 import { ORPCError, os } from '@orpc/server'
 import * as z from 'zod'
+import type { Db } from './db/index.js'
 
 // Example context type (e.g. Cloudflare Workers env + request headers)
 export type Context = {
   headers: Headers
+  db: Db
 }
 
 // Base procedure builder with context
