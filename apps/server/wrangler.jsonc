@@ -3,5 +3,10 @@
   "name": "game-framework-server",
   "main": "src/index.ts",
   "compatibility_date": "2025-03-30",
-  "minify": true
+  "minify": true,
+  // For production, set DATABASE_URL via: wrangler secret put DATABASE_URL
+  // For local dev, add DATABASE_URL to .dev.vars file (gitignored)
+  "vars": {
+    "DATABASE_URL": ""
+  }
 }
